@@ -31,11 +31,11 @@ public abstract class Bag {
      * be empty (e.g. numberOfContents is 0 and an empty String array for
      * its contents.)
      */
-    Bag(String colour, int capacity){
-        this.color = colour;
-        this.capacity = capacity;
-        this.numberOfContents = 0;
-        this.contents = new String[0];
+    public Bag(String colour, int capa){
+        color = colour;
+        capacity = capa;
+        numberOfContents = 0;
+        contents = new String[capacity];
     }
 
 
@@ -67,8 +67,8 @@ public abstract class Bag {
      * TODO: Create a setter function called setColor which sets the
      *       color of this bag to the given color.
      */
-    public void setColor(String color){
-        this.color = color;
+    public void setColor(String colour){
+        color = colour;
     }
 
 
@@ -131,6 +131,11 @@ public abstract class Bag {
     public void increaseCapacity(int n) {
         // TODO: Implement this method.
         this.capacity += n;
+        String[] copy = new String[contents.length + n];
+        for (String item : contents){
+            copy[copy.length - 1] = item;
+        }
+        this.contents = copy;
 
     }
 
