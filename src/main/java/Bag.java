@@ -107,15 +107,16 @@ public abstract class Bag {
      *
      * @return
      */
-    public String popItem(){
-        if (numberOfContents == 0){
+    public String popItem() {
+        if (numberOfContents == 0) {
             return null;
-        }else {
-        String removedItem = contents[numberOfContents - 1];
-        numberOfContents -= 1;
-        contents[numberOfContents] = null;
-        return removedItem;
+        } else {
+            String removedItem = contents[numberOfContents - 1];
+            numberOfContents -= 1;
+            contents[numberOfContents] = null;
+            return removedItem;
 
+        }
     }
 
 
